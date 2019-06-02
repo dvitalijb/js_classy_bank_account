@@ -4,8 +4,7 @@ class Person {
         this.name = name;
         this.date = date;
         this.amount = amount;
-        const initial = `Initial: ${this.amount}`;
-        this.transactions = [this.transactions, initial];
+        this.transactions = [this.transactions, `Initial: ${this.amount}`];
     }
 
     getInfo() {
@@ -18,13 +17,13 @@ class Person {
     addMoney(sum, title) {
         this.amount += sum;
         const transaction = `${title}: ${sum}`;
-        this.transactions = [...this.transactions, transaction];
+        this.transactions.push(transaction);
     }
 
     withdrawMoney(sum, title) {
         this.amount -= sum;
         const transaction = `${title}: ${-sum}`;
-        this.transactions = [...this.transactions, transaction];
+        this.transactions.push(transaction);
     }
 
     getAccountHistory() {
